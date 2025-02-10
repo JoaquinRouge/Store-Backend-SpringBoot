@@ -31,7 +31,7 @@ public class Sale {
 	)
 	private List<Product> productList;
 	@ManyToOne
-	@JoinColumn(name = "clientId", nullable = false)
+	@JoinColumn(name = "clientId")
 	private Client client;
 	
 	public Sale() {

@@ -40,13 +40,24 @@ public class ProductService implements IProductService{
 		// TODO Auto-generated method stub
 		repository.deleteById(id);
 	}
-
+	
 	@Override
-	public void editProduct(Product product) {
-		// TODO Auto-generated method stub
-		repository.save(product);
+	public void editProduct(Long id, String name, String brand, double price, int stock) {
+		Product productFromDataBase = this.getProduct(id);
+		
+		productFromDataBase.setName(name);
+		productFromDataBase.setBrand(brand);
+		productFromDataBase.setPrice(price);
+		productFromDataBase.setStock(stock);
+		
+		repository.save(productFromDataBase);
 	}
 
+	@Override
+	public void editProduct(Product updatedProduct) {
+		repository.save(updatedProduct);
+	}
+	
 	@Override
 	public List<Product> getLowStockProducts() {
 		List<Product> lowStockList = new ArrayList<>();
@@ -59,5 +70,7 @@ public class ProductService implements IProductService{
 		
 		return lowStockList;
 	}
+
+
 	
 }

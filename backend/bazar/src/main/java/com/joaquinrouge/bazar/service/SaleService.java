@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.joaquinrouge.bazar.dto.SaleByDateDTO;
+import com.joaquinrouge.bazar.model.Client;
 import com.joaquinrouge.bazar.model.Product;
 import com.joaquinrouge.bazar.model.Sale;
-import com.joaquinrouge.bazar.repository.IProductRepository;
 import com.joaquinrouge.bazar.repository.ISaleRepository;
 
 @Service
@@ -22,6 +22,9 @@ public class SaleService implements ISaleService{
 	@Autowired
 	private IProductService productService;
 	
+	@Autowired
+	private IClientService clientService;
+	
 	@Override
 	public List<Sale> getAllSale() {
 		// TODO Auto-generated method stub
@@ -30,25 +33,38 @@ public class SaleService implements ISaleService{
 
 	@Override
     public void createSale(Sale sale) {
-
-        List<Product> productList = sale.getProductList(); //Actual products from the Sale in DB
-        List<Product> newProductList = new ArrayList<Product>(); //Empty Product List
-
+		//Actual products from the Sale in DB
+        List<Product> productList = sale.getProductList(); 
+        //Empty Product List
+        List<Product> newProductList = new ArrayList<Product>();
+        
+        double totalPriceOfProductsInDB = 0;
+        
         for (Product product : productList) {
-             
+        	//Actual product 
         	Product existingProduct = productService.getProduct(product.getProductId());
             
             if (existingProduct != null) {
+            		//Discounts stock from product in DB
                     existingProduct.setStock(existingProduct.getStock() - 1);
+                    //Adds the product with the stock discount to te new product list
                     newProductList.add(existingProduct);
+                    //Increments the total price counter
+                    totalPriceOfProductsInDB += existingProduct.getPrice();
             }
             
+            
+            //This cicle edits the original products to correct the stock
             for (Product updatedProduct : newProductList) {
             	productService.editProduct(updatedProduct);
 			}
             
         }
+        //Sets the total price
+        sale.setTotal(totalPriceOfProductsInDB);
+        //Sets the corrected product list
         sale.setProductList(newProductList);
+        //Saves the sale in 
         repository.save(sale);
     }
 

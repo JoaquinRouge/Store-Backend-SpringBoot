@@ -42,9 +42,9 @@ public class ProductController {
 		service.deleteProduct(id);
 	}
 	
-	@PutMapping("/edit")
-	public void editProduct(Product product) {
-		service.editProduct(product);
+	@PutMapping("/edit/{id}")
+	public void editProduct(@PathVariable Long id,String name,String brand,double price, int stock) {
+		service.editProduct(id,name,brand,price,stock);
 	}
 	
 	@GetMapping("/lowstock")
