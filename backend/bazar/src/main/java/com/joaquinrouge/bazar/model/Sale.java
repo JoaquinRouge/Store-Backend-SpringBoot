@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Sale {
@@ -23,13 +25,8 @@ public class Sale {
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate saleDate;
 	private double total;
-	@ManyToMany
-	@JoinTable(
-	    name = "sale_product",
-	    joinColumns = @JoinColumn(name = "sale_id"),
-	    inverseJoinColumns = @JoinColumn(name = "product_id")
-	)
-	private List<Product> productList;
+	@OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+	private List<SaleDetail> saleDetailList;
 	@ManyToOne
 	@JoinColumn(name = "clientId")
 	private Client client;
@@ -38,12 +35,12 @@ public class Sale {
 		
 	}
 
-	public Sale(Long saleId, LocalDate saleDate, double total, List<Product> productList, Client client) {
+	public Sale(Long saleId, LocalDate saleDate, double total, List<SaleDetail> productList, Client client) {
 		super();
 		this.saleId = saleId;
 		this.saleDate = saleDate;
 		this.total = total;
-		this.productList = productList;
+		this.saleDetailList = productList;
 		this.client = client;
 	}
 
@@ -71,12 +68,12 @@ public class Sale {
 		this.total = total;
 	}
 
-	public List<Product> getProductList() {
-		return productList;
+	public List<SaleDetail> getSaleDetailList() {
+		return saleDetailList;
 	}
 
-	public void setProductList(List<Product> productList) {
-		this.productList = productList;
+	public void setSaleDetailList(List<SaleDetail> productList) {
+		this.saleDetailList = productList;
 	}
 
 	public Client getClient() {
