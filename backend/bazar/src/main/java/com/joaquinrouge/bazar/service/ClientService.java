@@ -1,8 +1,9 @@
 package com.joaquinrouge.bazar.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.joaquinrouge.bazar.model.Client;
@@ -21,9 +22,12 @@ public class ClientService implements IClientService{
 	}
 
 	@Override
-	public void createClient(Client client) {
+	public ResponseEntity<?> createClient(Client client) {
 		// TODO Auto-generated method stub
 		repository.save(client);
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(client);
+			
 	}
 
 	@Override

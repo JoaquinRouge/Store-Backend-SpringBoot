@@ -11,6 +11,18 @@ body{
     overflow-x: hidden;
 }
 
+footer{
+    background-color: var(--headerColor);
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto';
+}
+
+footer p{
+    padding-top: 15px;
+}
+
 a{
     color: white;
     text-decoration: none;

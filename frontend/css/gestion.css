@@ -1,0 +1,46 @@
+form{
+    width: 200px;
+    font-family: 'Roboto';
+}
+
+.create-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 220px;
+    height: 200px;
+    border: 1px solid black;
+}
+.create-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.create-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.create-form button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.create-form button:hover {
+    background: #0056b3;
+}
+
+#modifiable-section{
+    display: flex;
+    justify-content: center;
+}
