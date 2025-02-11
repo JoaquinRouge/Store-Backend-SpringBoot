@@ -1,0 +1,68 @@
+.main-list {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0; /* Elimina el padding predeterminado de la lista */
+  }
+  
+  .section {
+    margin-bottom: 20px; /* Espacio entre secciones (Dashboard, Visualizar) */
+  }
+  
+  .section strong {
+    display: block; /* Hace que el título de la sección ocupe todo el ancho */
+    font-size: 1.2em; /* Tamaño de letra más grande para los títulos */
+    margin-bottom: 10px; /* Espacio debajo del título de la sección */
+  }
+  
+  .sub-list {
+    list-style: none; /* Elimina los puntos de la sublista */
+    padding: 0;
+    margin-left: 10px; /* Margen a la izquierda para la sublista */
+  }
+  
+  .item {
+    margin-bottom: 10px; /* Espacio entre los items (Cliente, Productos, etc.) */
+  }
+  
+  .category {
+    font-weight: bold; /* Texto en negrita para la categoría */
+    display: block; /* La categoría ocupa todo el ancho */
+    margin-bottom: 5px; /* Espacio debajo de la categoría */
+  }
+  
+  .sub-item-list {
+    list-style: none; /* Elimina los puntos de la sub-sublista */
+    padding: 0;
+    margin-left: 10px; /* Margen a la izquierda para la sub-sublista */
+  }
+  
+  .sub-item {
+    margin-bottom: 5px; /* Espacio entre los sub-items (Agregar, Modificar, Eliminar) */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+  }
+
+  .sub-item:hover {
+    color: black; /* Subraya el texto al pasar por encima */
+  }
+  
+  /* Ajustes para mejorar la apariencia (opcional) */
+  .sub-item {
+    padding: 5px 10px; /* Añade algo de padding a los sub-items */
+    border-radius: 3px; /* Bordes redondeados */
+  }
+  
+  .item {
+      padding-bottom: 10px; /* Espacio inferior para la línea */
+  }
+  
+  .item:last-child {
+      border-bottom: none; /* Elimina la línea del último elemento */
+  }
+
+  .icon{
+    padding: 4px;
+  }
+
+  .bi-plus-lg{
+    font-size: 20px;
+    padding: 3px;
+  }

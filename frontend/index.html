@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/aside.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Software de Gestión de Ventas</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html"><h1 class="title">Gestor de Ventas</h1></a>
+    </header>
+    <main>
+      <aside>
+        <ul class="main-list">
+          <li class="section">
+            <strong><i class="bi bi-speedometer2 icon"></i>Panel:</strong>
+            <ul class="sub-list">
+              <li class="item">
+                <span class="category">
+                  <i class="bi bi-person-fill icon"></i>Cliente:
+                </span>
+                <ul class="sub-item-list">
+                  <li class="sub-item">
+                    <a href="#">
+                      <i class="bi bi-plus-lg icon"></i>Agregar un cliente</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-pen-fill icon"></i>Modificar un
+                      cliente</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-trash-fill icon"></i>Eliminar un
+                      cliente</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="item">
+                <span class="category">
+                  <i class="bi bi-bag-fill icon"></i>Productos:
+                </span>
+                <ul class="sub-item-list">
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-plus-lg icon"></i>Agregar un producto</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-pen-fill icon"></i>Modificar un
+                      producto</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-trash-fill icon"></i>Eliminar un
+                      producto</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="item">
+                <span class="category">
+                  <i class="bi bi-file-earmark-text-fill icon"></i>Ventas:
+                </span>
+                <ul class="sub-item-list">
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-plus-lg icon"></i>Agregar una venta</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-pen-fill icon"></i>Modificar una venta</a
+                    >
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"
+                      ><i class="bi bi-trash-fill icon"></i>Eliminar una
+                      venta</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="section">
+            <strong><i class="bi bi-eye icon"></i>Visualizar:</strong>
+            <ul class="sub-list">
+              <li class="sub-item">
+                <a href="./visualize.html?action=visualize&entity=client"
+                  >Clientes</a
+                >
+              </li>
+              <li class="sub-item"><a href="#">Productos</a></li>
+              <li class="sub-item"><a href="#">Ventas</a></li>
+              <li class="sub-item"><a href="#">Productos con bajo stock</a></li>
+              <li class="sub-item"><a href="#">Venta por fecha</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <section class="notifications-panel">
+        <div>
+          <h2 class="title">Panel de notificaciones</h2>
+          <div class="notifications" id="notifications"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
