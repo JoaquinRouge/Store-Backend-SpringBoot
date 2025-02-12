@@ -27,6 +27,7 @@ form{
 }
 .create-form button {
     margin-top: 15px;
+    margin-left: 9px;
     padding: 10px;
     width: 100%;
     background: #007bff;

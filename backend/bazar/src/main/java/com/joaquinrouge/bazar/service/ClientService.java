@@ -43,8 +43,18 @@ public class ClientService implements IClientService{
 	}
 
 	@Override
-	public void editClient(Client client) {
-		// TODO Auto-generated method stub
-		repository.save(client);
+	public ResponseEntity<?> editClient(Long id,String nameSurname,int dni) {
+		Client client = this.getClient(id);
+		
+		if(client != null) {
+			client.setNameSurname(nameSurname);
+			client.setDni(dni);
+			
+			repository.save(client);
+			return ResponseEntity.status(HttpStatus.CREATED).build();
+		}else {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
+		
 	}
 }

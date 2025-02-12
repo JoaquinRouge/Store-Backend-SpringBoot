@@ -51,8 +51,9 @@ public class ClientController {
 	}
 	
 	@PutMapping("/edit")
-	public void editClient(Client client) {
-		service.editClient(client);
+	public ResponseEntity<?> editClient(@RequestBody Client client) {
+	    return service.editClient(client.getClientId(), client.getNameSurname(), client.getDni());
 	}
+
 	
 }

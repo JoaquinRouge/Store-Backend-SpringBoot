@@ -12,7 +12,7 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long clientId;
 	private String nameSurname;
-	private int dni;
+	private Integer dni;
 	
 	public Client() {
 		

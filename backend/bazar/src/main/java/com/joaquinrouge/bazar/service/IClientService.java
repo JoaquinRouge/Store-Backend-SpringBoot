@@ -11,5 +11,5 @@ public interface IClientService {
 	public ResponseEntity<?> createClient(Client client);
 	public Client getClient(Long id);
 	public void deleteClient(Long id);
-	public void editClient(Client client);
+	public ResponseEntity<?> editClient(Long id,String nameSurname, int dni);
 }

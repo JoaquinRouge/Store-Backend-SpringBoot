@@ -98,7 +98,6 @@ public class SaleService implements ISaleService{
 
 	@Override
 	public void editSale(Sale sale) {
-		// TODO Auto-generated method stub
 		repository.save(sale);
 	}
 
