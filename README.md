@@ -115,3 +115,121 @@ Autor:
 Joaquín Rougé Núñez
 
 Este proyecto se distribuye bajo la licencia MIT.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Backend Project with Spring Boot
+
+Description:
+
+This is a backend project developed with Spring Boot that allows to manage customers, products and sales. It implements a complete CRUD for each entity and handles data persistence using JPA and Hibernate with MySQL.
+
+Technologies Used
+
+Java 23
+
+Spring Boot (Spring MVC, Spring Data JPA)
+
+Hibernate
+
+MySQL
+
+Maven
+
+Installation and Configuration
+
+Clone the repository:
+
+git clone https://github.com/JoaquinRouge/Store-Backend-SpringBoot.git
+
+Configure the database in application.properties:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/bd_name spring.datasource.username=your_user spring.datasource.password=your_password spring.jpa.hibernate.ddl-auto=update
+
+Build and run the application:
+
+mvn spring-boot:run
+
+Usage
+
+Main endpoints
+
+Clients:
+
+GET:
+
+/clients/all : Fetch all existing clients in the database.
+
+/clients/get/{id} : Receives an id of type Long via URL and fetches the client with the same id from the database.
+
+POST:
+
+/clients/save: Receives a client by parameter and adds it to the database.
+
+DELETE:
+
+/clients/delete/{id} : Receives an id of type Long by URL and deletes the client with the same id from the database.
+
+PUT:
+
+/clients/edit : Receives a client by parameter and by searching for it by its Id edits it in the database.
+
+Products:
+
+GET:
+
+/products/all : Get all existing products in the database.
+
+/products/get/{id} : Receives an id of type Long by means of the URL and fetches the client with the same id from the database.
+
+/products/lowstock : Returns a list of all products with stock less than the set threshold.
+
+POST:
+
+/products/save: Receives a product by parameter and adds it to the database.
+
+DELETE:
+
+/products/delete/{id} : Receives an id of type Long by URL and deletes the customer with the same id from the database.
+
+PUT:
+
+/products/edit : Receives a customer by parameter and when searching for it by its Id edits it in the database.
+
+Sales:
+
+GET:
+
+/sales/all : Get all existing sales in the database.
+
+/sales/get/{id} : Receives an id of type Long by means of the URL and fetches the sale with the same id from the database.
+
+/sales/products/{saleId} : Receives the id of a sale and returns all the products of that sale.
+
+/sales/date/{date} : Receives a date with format dd-MM-yyyy and returns all sales made on that day.
+
+POST:
+
+/sales/save: Receives a sale by parameter and adds it to the database.
+
+DELETE:
+
+/sales/delete/{id} : Receives an id of type Long by URL and deletes the sale with the same id from the database.
+
+PUT:
+
+/sales/edit : Receives a customer by parameter and by searching it by its Id edits it in the database.
+
+You can test the endpoints using Postman or similar tools.
+
+The project has also a front end made by me. It doesn't have all the functionalities since it was merely made to test some of the API functionalities (Not all, we are missing to implement Sale Views and CRUD) and what I am interested in is to show my current skills in backend and not frontend development.
+
+Author:
+
+Joaquín Rougé Núñez
+
+This project is distributed under the MIT license.
+
+Translated with DeepL.com (free version)
