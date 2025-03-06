@@ -231,5 +231,3 @@ Author:
 Joaquín Rougé Núñez
 
 This project is distributed under the MIT license.
-
-Translated with DeepL.com (free version)
