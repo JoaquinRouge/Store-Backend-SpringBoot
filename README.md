@@ -114,9 +114,6 @@ Autor:
 
 Joaquín Rougé Núñez
 
-Este proyecto se distribuye bajo la licencia MIT.
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -229,5 +226,3 @@ The project has also a front end made by me. It doesn't have all the functionali
 Author:
 
 Joaquín Rougé Núñez
-
-This project is distributed under the MIT license.
